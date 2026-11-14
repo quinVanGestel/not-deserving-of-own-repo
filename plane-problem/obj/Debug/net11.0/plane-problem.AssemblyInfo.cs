@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("plane-problem")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b03bcc53eb312c08f839bd199a3ce15f88ce3107")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f2ffb9ff0acf2f00d649a56c58aa740549d7d66")]
 [assembly: System.Reflection.AssemblyProductAttribute("plane-problem")]
 [assembly: System.Reflection.AssemblyTitleAttribute("plane-problem")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

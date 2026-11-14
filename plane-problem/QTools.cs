@@ -2,16 +2,16 @@
 public static class QTools
 {
 
-    // /// <returns>Returns the array index of the item if it can be found in the array. Returns -1 otherwise.</returns>
-    // public static int findIndex<T>(T item, T[] array)
-    // {
-    //     for (int i = 0; i < array.Length; i++)
-    //     {
-    //         if (item.Equals(array[i]))
-    //             return i;
-    //     }
-    //     return -1;
-    // }
+    /// <returns>Returns the array index of the item if it can be found in the array. Returns -1 otherwise.</returns>
+    public static int findIndex<T>(T item, T[] array)
+    {
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (item.Equals(array[i]))
+                return i;
+        }
+        return -1;
+    }
 
     // /// <summary>
     // /// Compares each number in array one to each number in array two. Finds the pair between which the distance is the largest. Returns that distance.
@@ -239,7 +239,7 @@ public static class QTools
             arrayReference[i] = factory();
         }
     }
-    
+
     public static void Meow()
     {
         Console.WriteLine("Meow");
