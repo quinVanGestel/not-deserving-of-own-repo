@@ -1,0 +1,17 @@
+C:\Users\Quinv\Documents\GitHub\personal\not-deserving-of-own-repo\plane-problem\obj\Debug\net11.0\plane-problem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Quinv\Documents\GitHub\personal\not-deserving-of-own-repo\plane-problem\obj\Debug\net11.0\plane-problem.AssemblyInfoInputs.cache
+C:\Users\Quinv\Documents\GitHub\personal\not-deserving-of-own-repo\plane-problem\obj\Debug\net11.0\plane-problem.AssemblyInfo.cs
+C:\Users\Quinv\Documents\GitHub\personal\not-deserving-of-own-repo\plane-problem\obj\Debug\net11.0\plane-problem.csproj.CoreCompileInputs.cache
+C:\Users\Quinv\Documents\GitHub\personal\not-deserving-of-own-repo\plane-problem\obj\Debug\net11.0\plane-problem.sourcelink.json
+C:\Users\Quinv\Documents\GitHub\personal\not-deserving-of-own-repo\plane-problem\bin\Debug\net11.0\plane-problem.exe
+C:\Users\Quinv\Documents\GitHub\personal\not-deserving-of-own-repo\plane-problem\bin\Debug\net11.0\plane-problem.deps.json
+C:\Users\Quinv\Documents\GitHub\personal\not-deserving-of-own-repo\plane-problem\bin\Debug\net11.0\plane-problem.runtimeconfig.json
+C:\Users\Quinv\Documents\GitHub\personal\not-deserving-of-own-repo\plane-problem\bin\Debug\net11.0\plane-problem.runtimeconfig.dev.json
+C:\Users\Quinv\Documents\GitHub\personal\not-deserving-of-own-repo\plane-problem\bin\Debug\net11.0\plane-problem.dll
+C:\Users\Quinv\Documents\GitHub\personal\not-deserving-of-own-repo\plane-problem\bin\Debug\net11.0\plane-problem.pdb
+C:\Users\Quinv\Documents\GitHub\personal\not-deserving-of-own-repo\plane-problem\obj\Debug\net11.0\plane-problem.dll
+C:\Users\Quinv\Documents\GitHub\personal\not-deserving-of-own-repo\plane-problem\obj\Debug\net11.0\refint\plane-problem.dll
+C:\Users\Quinv\Documents\GitHub\personal\not-deserving-of-own-repo\plane-problem\obj\Debug\net11.0\plane-problem.pdb
+C:\Users\Quinv\Documents\GitHub\personal\not-deserving-of-own-repo\plane-problem\obj\Debug\net11.0\plane-problem.genruntimeconfig.cache
+C:\Users\Quinv\Documents\GitHub\personal\not-deserving-of-own-repo\plane-problem\obj\Debug\net11.0\ref\plane-problem.dll
+C:\Users\Quinv\Documents\GitHub\personal\not-deserving-of-own-repo\plane-problem\obj\Debug\net11.0\plane-pr.EA10FC4A.Up2Date

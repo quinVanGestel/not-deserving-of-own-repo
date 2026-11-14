@@ -1,0 +1,248 @@
+
+public static class QTools
+{
+
+    // /// <returns>Returns the array index of the item if it can be found in the array. Returns -1 otherwise.</returns>
+    // public static int findIndex<T>(T item, T[] array)
+    // {
+    //     for (int i = 0; i < array.Length; i++)
+    //     {
+    //         if (item.Equals(array[i]))
+    //             return i;
+    //     }
+    //     return -1;
+    // }
+
+    // /// <summary>
+    // /// Compares each number in array one to each number in array two. Finds the pair between which the distance is the largest. Returns that distance.
+    // /// </summary>
+    // public static float distanceLargest(float[] numbersArrayOne, float[] numbersArrayTwo)
+    // {
+    //     float largestDistanceSoFar = numbersArrayOne[0];
+    //     foreach (float i in numbersArrayOne)
+    //     {
+    //         foreach (float j in numbersArrayTwo)
+    //         {
+    //             if (i - j > largestDistanceSoFar)
+    //             {
+    //                 largestDistanceSoFar = i - j;
+    //             }
+    //         }
+    //     }
+
+    //     return largestDistanceSoFar;
+    // }
+
+    // /// <summary>
+    // /// Compares each number in array one to each number in array two. Finds the pair between which the distance is the smallest. Returns that distance.
+    // /// </summary>
+    // public static float distanceSmallest(float[] numbersArrayOne, float[] numbersArrayTwo)
+    // {
+    //     float smallestDistanceSoFar = numbersArrayOne[0];
+    //     foreach (float i in numbersArrayOne)
+    //     {
+    //         foreach (float j in numbersArrayTwo)
+    //         {
+    //             if (i - j < smallestDistanceSoFar)
+    //             {
+    //                 smallestDistanceSoFar = i - j;
+    //             }
+    //         }
+    //     }
+
+    //     return smallestDistanceSoFar;
+    // }
+
+    // /// <summary>
+    // /// Returns all children of the given gameobject, looks only one layer deep.
+    // /// </summary>
+    // public static GameObject[] getAllChildren(GameObject parent)
+    // {
+    //     List<GameObject> children = new();
+    //     foreach (Transform child in parent.transform)
+    //     {
+    //         children.Add(child.gameObject);
+    //     }
+
+    //     return children.ToArray();
+    // }
+
+
+    // /// <summary>
+    // /// Returns a component of the requested type from the gameobject siblings of the given gameobject.
+    // /// </summary>
+    // public static T getComponentInSiblings<T>(GameObject gameObject)
+    // {
+    //     return gameObject.transform.parent.gameObject.GetComponentInChildren<T>();
+    // }
+
+    // /// <summary>
+    // /// Returns all components of the requested type from the gameobject siblings of the given gameobject.
+    // /// </summary>
+    // public static T[] getComponentsInSiblings<T>(GameObject gameObject)
+    // {
+    //     return gameObject.transform.parent.gameObject.GetComponentsInChildren<T>();
+    // }
+
+    // // /// <summary>
+    // // /// I recommend using the resizer script where possible, as this allows for variable storage.
+    // // /// </summary>
+    // // public static Vector3 SetSize(Vector3 newSize, ResizeModes resizeMode, GameObject gameObject, Vector3 currentSize)
+    // // {
+    // //     Vector3 rescaleFactor = gameObject.transform.localScale;
+
+    // //     switch (resizeMode)
+    // //     {
+    // //         case ResizeModes.Stretch:
+    // //             rescaleFactor.x = newSize.x * rescaleFactor.x / currentSize.x;
+    // //             rescaleFactor.y = newSize.y * rescaleFactor.y / currentSize.y;
+    // //             rescaleFactor.z = newSize.z * rescaleFactor.z / currentSize.z;
+    // //             break;
+    // //     }
+
+    // //     return rescaleFactor;
+    // // }
+
+
+    // public static Vector3 newSizeExponential(Vector3 currentSize, Vector3 sizeMultiplier, float power)
+    // {
+    //     float newSizeMultiplierX = MathF.Pow(sizeMultiplier.x, power);
+    //     float newSizeMultiplierY = MathF.Pow(sizeMultiplier.y, power);
+    //     float newSizeMultiplierZ = MathF.Pow(sizeMultiplier.z, power);
+
+    //     float newSizeX = currentSize.x * newSizeMultiplierX;
+    //     float newSizeY = currentSize.y * newSizeMultiplierY;
+    //     float newSizeZ = currentSize.z * newSizeMultiplierZ;
+
+    //     Vector3 newSize = new(newSizeX, newSizeY, newSizeZ);
+
+    //     return newSize;
+    // }
+
+
+    // /// <returns>Either -1 or 1</returns>
+    // public static int randomDirection1D()
+    // {
+    //     if (UnityEngine.Random.Range(0, 2) == 1) return 1;
+    //     else return -1;
+    // }
+
+    // //A beautiful function I definitely did not steal :3
+    // /// <param name="target">Mean of the distribution</param>
+    // /// <param name="standardDeviation">Standard deviation controls the spread of values</param>
+    // public static float generateRandomNumberNearTarget(float target, float minInclusive, float maxInclusive, float standardDeviation)
+    // {
+    //     System.Random random = new();
+    //     float mean = target;
+    //     double u1 = 1.0 - random.NextDouble();
+    //     double u2 = 1.0 - random.NextDouble();
+    //     double randStdNormal = Math.Sqrt(-2.0 * Math.Log(u1)) * Math.Sin(2.0 * Math.PI * u2);
+    //     double randNormal = mean + standardDeviation * randStdNormal;
+    //     float generatedNumber = (float)Math.Clamp(randNormal, minInclusive, maxInclusive); // Ensure the generated value is within the specified range
+    //     return generatedNumber;
+    // }
+
+    // public static bool anyStringMatches(string[] primaryStrings, string[] secondaryStrings)
+    // {
+    //     foreach (string primaryString in primaryStrings)
+    //     {
+    //         foreach (string secondaryString in secondaryStrings)
+    //         {
+    //             if (primaryString == secondaryString)
+    //             {
+    //                 return true;
+    //             }
+    //         }
+    //     }
+    //     return false;
+    // }
+
+    // public static bool anyMonoBehaviourMatches(Component[] primaryArray, Component[] secondaryArray)
+    // {
+    //     foreach (Component primaryItem in primaryArray)
+    //     {
+    //         foreach (Component secondaryItem in secondaryArray)
+    //         {
+    //             // Debug.Log("Comparing " + primaryItem.name + " against " + secondaryItem.name);
+    //             if (primaryItem.GetType() == secondaryItem.GetType())
+    //             {
+    //                 Debug.Log(primaryItem.name + " equals " + secondaryItem.name);
+    //                 return true;
+    //             }
+    //         }
+    //     }
+    //     // Debug.Log("None of the components match.");
+    //     return false;
+    // }
+
+    // /// <returns>All the mesh renderers in the hierarchy that have this material.</returns>
+    // public static MeshRenderer[] getAllMeshRenderers(Material requestedMaterial)
+    // {
+    //     MeshRenderer[] allMeshRenderers = GameObject.FindObjectsByType<MeshRenderer>();
+    //     List<MeshRenderer> requestedMeshRenderers = new();
+    //     foreach (MeshRenderer meshRenderer in allMeshRenderers)
+    //     {
+    //         foreach (Material meshRendererMaterial in meshRenderer.sharedMaterials)
+    //         {
+    //             if (requestedMaterial.name.Contains(meshRendererMaterial.name))
+    //             {
+    //                 requestedMeshRenderers.Add(meshRenderer);
+    //                 break;
+    //             }
+    //         }
+    //     }
+    //     return requestedMeshRenderers.ToArray();
+    // }
+
+    // public static void singletonSetup<T>(ref T caller, ref T instance) where T : Component
+    // {
+    //     if (instance != null && instance.Equals(instance))
+    //     {
+    //         GameObject.Destroy(caller);
+    //         return;
+    //     }
+    //     instance = caller;
+    // }
+
+    // // Alteration of https://discussions.unity.com/t/random-shuffle-array/443149/4
+    // public static T[] shuffleArray<T>(T[] array)
+    // {
+    //     T[] arrayCopy = new T[array.Length];    // To make sure we don't accidentally alter the paramater's array
+    //     array.CopyTo(arrayCopy, 0);
+
+    //     for (int i = 0; i < array.Length; i++)
+    //     {
+    //         T itemHolder = array[i];
+    //         int randomInt = UnityEngine.Random.Range(i, array.Length);
+    //         arrayCopy[i] = arrayCopy[randomInt];
+    //         arrayCopy[randomInt] = itemHolder;
+    //     }
+
+    //     return arrayCopy;
+    // }
+
+    /// <summary>
+    /// Fills the array with objects of the array's type
+    /// </summary>
+    /// <param name="factory">Constructor arguments that will be used for each initialisation. Must take the form of () => new(put arguments here)</param>
+    // AI: Called when the type has a parameterless constructor
+    public static void FillArray<T>(T[] arrayReference) where T : new()
+    {
+        FillArray(arrayReference, () => new T());
+    }
+
+    // AI: Called when the type needs constructor arguments
+    public static void FillArray<T>(T[] arrayReference, Func<T> factory)
+    {
+        for (int i = 0; i < arrayReference.Length; i++)
+        {
+            arrayReference[i] = factory();
+        }
+    }
+    
+    public static void Meow()
+    {
+        Console.WriteLine("Meow");
+    }
+
+}

@@ -1,30 +1,18 @@
-
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
-BeautifulAirplaneMathProblemSimulation reference = new();
-reference.EntryPoint();
-
-public class BeautifulAirplaneMathProblemSimulation
+public class Airplane
 {
     private Seat[] seats = new Seat[100];
     private Passenger[] passengers = new Passenger[100];
 
-    private void FillArray()
-    {
-        foreach (Seat seat in seats)
-        {
-            seat = new();
-        }
-    }
 
     public void EntryPoint()
     {
+        QTools.FillArray(seats);
+        QTools.FillArray(passengers);
         Console.WriteLine(passengers.Length);
         Console.WriteLine(passengers[53].seated);
-        // foreach(Passenger passenger in passengers)
-        // {
-
-        // }
     }
 
 
@@ -32,13 +20,14 @@ public class BeautifulAirplaneMathProblemSimulation
 
 public class Seat
 {
+    [AllowNull]
     public Passenger seatedPassenger;
     public bool occupied;
 }
 
 public class Passenger
 {
-    [RangeAttribute(0, 100)]
+    [Range(0, 100)]
     public int desiredSeat = -1;
     public bool seated;
 }
