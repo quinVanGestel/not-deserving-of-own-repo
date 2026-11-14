@@ -1,0 +1,4 @@
+100 passengers board a 100-seat plane one by one. 
+Passenger #1 loses their ticket and picks any seat at random. 
+Everyone else sits in their assigned seat if empty, or picks a random empty seat. 
+What are the odds passenger #100 gets their assigned seat?
