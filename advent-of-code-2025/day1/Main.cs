@@ -7,12 +7,14 @@ Console.WriteLine("Amount of zeroes: " + reference.AmountOfZeroes().ToString());
 
 public static class Settings
 {
-    public static string[] inputRaw = File.ReadAllLines("input.txt");
+    public static string[] InputRaw = File.ReadAllLines("input.txt");
+    public static int SuccessCondition = 0;
+    public static int SuccessAmount;
 }
 
 public class SafeCracker
 {
-    private string[] inputRaw = Settings.inputRaw;
+    private string[] inputRaw = Settings.InputRaw;
     [MaybeNull]
     private Rotation[] rotations;
     private Dial dial = new();
@@ -85,24 +87,76 @@ public class Dial
 
     public void MoveDial(int distance)
     {
-        int newPosition = position + distance;
-
-        newPosition = handleUnderflowRecursive(newPosition, minDialPosition, maxDialPosition);
-        if (newPosition < minDialPosition)
+        while (distance != 0)
         {
-            Console.Beep();
-            Console.WriteLine("!! dial underload! position is now " + newPosition);
+            if (distance < 0)
+            {
+                newPosition = ClickDial(Direction.Left);
+                distance++;
+            }
+            else if (distance > 0)
+            {
+                newPosition = ClickDial(Direction.Right);
+                distance--;
+            }
+
         }
 
-        newPosition = handleOverflowRecursive(newPosition, maxDialPosition);
-        if (newPosition > maxDialPosition)
-        {
-            Console.Beep();
-            Console.WriteLine("!! dial overload! position is now " + newPosition);
-        }
+        // newPosition = handleUnderflowRecursive(newPosition, minDialPosition, maxDialPosition);
+        // if (newPosition < minDialPosition)
+        // {
+        // Console.Beep();
+        // Console.WriteLine("!! dial underload! position is now " + newPosition);
+        // }
 
-        position = newPosition;
+        // newPosition = handleOverflowRecursive(newPosition, maxDialPosition);
+        // if (newPosition > maxDialPosition)
+        // {
+        // Console.Beep();
+        // Console.WriteLine("!! dial overload! position is now " + newPosition);
+        // }
+
+
     }
+
+    private enum Direction
+    {
+        Left, Right
+    }
+
+    private int ClickDial(Direction direction)
+    {
+        int newPosition = position;
+        switch (direction)
+        {
+            case Direction.Left:
+                if (position == minDialPosition)
+                {
+                    newPosition = maxDialPosition; // Underflow
+                    break;
+                }
+                newPosition--;
+                break;
+            case Direction.Right:
+                if (position == maxDialPosition)
+                {
+                    newPosition = minDialPosition; // Overflow
+                    break;
+                }
+                newPosition++;
+                break;
+        }
+
+        if (newPosition == Settings.SuccessCondition)
+        {
+            Settings.SuccessAmount++;
+        }
+
+        return newPosition;
+    }
+
+
+
 }
 
 
