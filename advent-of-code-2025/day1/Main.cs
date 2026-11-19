@@ -2,7 +2,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 
 SafeCracker reference = new();
-Console.WriteLine("Amount of zeroes: " + reference.AmountOfZeroes().ToString());
+reference.AmountOfZeroes();
+Console.WriteLine("Amount of zeroes: " + Settings.SuccessAmount.ToString());
 
 
 public static class Settings
@@ -19,10 +20,10 @@ public class SafeCracker
     private Rotation[] rotations;
     private Dial dial = new();
 
-    public int AmountOfZeroes()
+    public void AmountOfZeroes()
     {
         rotations = new Rotation[inputRaw.Length];
-        int zeroes = 0;
+        // int zeroes = 0;
 
         for (int i = 0; i < rotations.Length; i++)
         {
@@ -37,12 +38,12 @@ public class SafeCracker
             Console.Write(dial.position + "  ");
             if (dial.position == 0)
             {
-                zeroes++;
+                // zeroes++;
                 Console.WriteLine("The dial is 0 :)");
             }
         }
 
-        return zeroes;
+        return;
     }
 }
 
@@ -55,35 +56,35 @@ public class Dial
     [Range(0, 99)]
     public int position = 50;
 
-    private int handleUnderflowRecursive(int value, int minValue, int maxValue)
-    {
-        if (value < minValue)
-        {
-            value += maxValue + 1;
-        }
+    // private int handleUnderflowRecursive(int value, int minValue, int maxValue)
+    // {
+    //     if (value < minValue)
+    //     {
+    //         value += maxValue + 1;
+    //     }
 
-        if (value < minValue)
-        {
-            value = handleUnderflowRecursive(value, minValue, maxValue);
-        }
+    //     if (value < minValue)
+    //     {
+    //         value = handleUnderflowRecursive(value, minValue, maxValue);
+    //     }
 
-        return value;
-    }
+    //     return value;
+    // }
 
-    private int handleOverflowRecursive(int value, int maxValue)
-    {
-        if (value > maxValue)
-        {
-            value -= maxValue + 1;
-        }
+    // private int handleOverflowRecursive(int value, int maxValue)
+    // {
+    //     if (value > maxValue)
+    //     {
+    //         value -= maxValue + 1;
+    //     }
 
-        if (value > maxValue)
-        {
-            value = handleOverflowRecursive(value, maxValue);
-        }
+    //     if (value > maxValue)
+    //     {
+    //         value = handleOverflowRecursive(value, maxValue);
+    //     }
 
-        return value;
-    }
+    //     return value;
+    // }
 
     public void MoveDial(int distance)
     {
@@ -91,15 +92,14 @@ public class Dial
         {
             if (distance < 0)
             {
-                newPosition = ClickDial(Direction.Left);
+                position = ClickDial(Direction.Left);
                 distance++;
             }
             else if (distance > 0)
             {
-                newPosition = ClickDial(Direction.Right);
+                position = ClickDial(Direction.Right);
                 distance--;
             }
-
         }
 
         // newPosition = handleUnderflowRecursive(newPosition, minDialPosition, maxDialPosition);
